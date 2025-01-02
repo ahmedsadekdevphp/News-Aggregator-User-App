@@ -1,8 +1,9 @@
 const config = {
-  BAC_URL: 'http://127.0.0.1:8000',
+  BAC_URL: 'http://127.0.0.1:8000/api/',
   ENDPOINTS: {
-    LOGIN: '/api/login',
-    REGISTER: '/api/register',
+    LOGIN: 'login',
+    REGISTER: 'register',
+    NEWS_FEED: 'news/feed', 
   }
 };
 

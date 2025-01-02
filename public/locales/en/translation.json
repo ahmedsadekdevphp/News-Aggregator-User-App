@@ -1,0 +1,24 @@
+{
+    "login": {
+      "title": "Login",
+      "emailPlaceholder": "Enter your email",
+      "passwordPlaceholder": "Enter your password",
+      "emailRequired": "Email is required",
+      "passwordRequired": "Password is required",
+      "generalError": "An error occurred. Please try again.",
+      "button": "Login"
+    },"newsFeed": {
+    "author": "Author",
+    "category": "Category",
+    "type": "Type",
+    "source": "Source",
+    "postedOn": "Posted on",
+    "title": "News Feed",
+    "loading": "Loading...",
+    "noPostsFound": "No posts found.",
+    "failedToLoad": "Failed to load news feed. Please try again.",
+    "noPostsAvailable": "No news posts available."
+  }
+
+  }
+  

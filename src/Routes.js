@@ -5,6 +5,7 @@ import Footer from './Components/Footer';
 
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import NewsFeed from './Pages/NewsFeed';
 const AppRoutes = () => (
   <Router>
   <Header />
@@ -12,6 +13,8 @@ const AppRoutes = () => (
     <Routes>
       <Route path="/register" element={<Register />} />
       <Route path="/" element={<Login />} />
+      <Route path="/news-feed" element={<NewsFeed />} />
+
     </Routes>
   </div>
 </Router>

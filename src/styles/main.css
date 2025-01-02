@@ -26,6 +26,12 @@
   .form{
     margin-top: 70px;
   }
+  a {
+    text-decoration: none !important;
+  }
+  .post-title {
+    text-decoration: underline;
+  }
   .alert-danger {
    --bs-alert-bg:none !important;
   }
