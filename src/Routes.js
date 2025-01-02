@@ -6,6 +6,7 @@ import Footer from './Components/Footer';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import NewsFeed from './Pages/NewsFeed';
+import ArticleSearch from './Pages/ArticleSearch';
 const AppRoutes = () => (
   <Router>
   <Header />
@@ -14,6 +15,7 @@ const AppRoutes = () => (
       <Route path="/register" element={<Register />} />
       <Route path="/" element={<Login />} />
       <Route path="/news-feed" element={<NewsFeed />} />
+      <Route path="/search" element={<ArticleSearch />} />
 
     </Routes>
   </div>

@@ -1,13 +1,14 @@
 {
-    "login": {
-      "title": "Login",
-      "emailPlaceholder": "Enter your email",
-      "passwordPlaceholder": "Enter your password",
-      "emailRequired": "Email is required",
-      "passwordRequired": "Password is required",
-      "generalError": "An error occurred. Please try again.",
-      "button": "Login"
-    },"newsFeed": {
+  "login": {
+    "title": "Login",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "generalError": "An error occurred. Please try again.",
+    "button": "Login"
+  },
+  "newsFeed": {
     "author": "Author",
     "category": "Category",
     "type": "Type",
@@ -18,7 +19,20 @@
     "noPostsFound": "No posts found.",
     "failedToLoad": "Failed to load news feed. Please try again.",
     "noPostsAvailable": "No news posts available."
+  },
+  "articleSearch": {
+    "title": "Search for Articles",
+    "keywordPlaceholder": "Search by keyword",
+    "categoryPlaceholder": "Select Category",
+    "sourcePlaceholder": "Select Source",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "invalidDateTitle": "Invalid Date Selection",
+    "invalidDateMessage": "End date cannot be before start date.",
+    "searchButton": "Search",
+    "searching": "Searching...",
+    "fetchFailed": "Failed to fetch lookups.",
+    "searchFailed": "Search failed.",
+    "noArticlesFound": "No articles found."
   }
-
-  }
-  
+}

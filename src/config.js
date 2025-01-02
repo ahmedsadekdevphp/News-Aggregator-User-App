@@ -4,6 +4,8 @@ const config = {
     LOGIN: 'login',
     REGISTER: 'register',
     NEWS_FEED: 'news/feed', 
+    ARTICLE_SEARCH_LOOCKUP:'search/lookups',
+    ARTICLE_SEARCH:'search'
   }
 };
 

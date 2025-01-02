@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     setGeneralError('');
     try {
-      const response = await axios.post(config.BAC_URL + config.ENDPOINTS.LOGIN, {
+      const response = await axios.post(`${config.BAC_URL}${config.ENDPOINTS.LOGIN}`, {
         email: data.email,
         password: data.password,
       });
@@ -27,11 +27,11 @@ const Login = () => {
         Object.keys(validationErrors).forEach((field) => {
           setError(field, {
             type: 'server',
-            message: validationErrors[field][0], 
+            message: validationErrors[field][0],
           });
         });
-  
-      }else{
+
+      } else {
         setGeneralError('Network error Please Try again !');
       }
     }

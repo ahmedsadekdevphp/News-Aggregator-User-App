@@ -33,7 +33,6 @@ const NewsFeed = () => {
             setLoading(false);
         } catch (err) {
             setError(t('newsFeed.failedToLoad')); 
-            console.error(err);
             setLoading(false);
         }
     };
@@ -50,10 +49,10 @@ const NewsFeed = () => {
 
     return (
         <div className="container my-4">
-            <h3 className="text-center">{t('newsFeed.title')}</h3> 
+            <h4 className="text-center mb-4">{t('newsFeed.title')}</h4> 
             {error && <div className="alert alert-danger">{error}</div>}
             {loading ? (
-                <p>{t('newsFeed.loading')}</p> 
+                <p><center>{t('newsFeed.loading')}</center></p> 
             ) : (
                 posts.length > 0 ? (
                     <>
