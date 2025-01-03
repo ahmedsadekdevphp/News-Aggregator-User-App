@@ -33,6 +33,31 @@
     "searching": "Searching...",
     "fetchFailed": "Failed to fetch lookups.",
     "searchFailed": "Search failed.",
-    "noArticlesFound": "No articles found."
+    "noArticlesFound": "No articles found.",
+    "loading": "Loading.."
+
+  },
+  "header": {
+    "login": "Login",
+    "register": "Register",
+    "newsFeed": "News Feed",
+    "articleSearch": "Article Search",
+    "account": "Account",
+    "preferences": "Preferences",
+    "logout": "Logout"
+  },
+  "preferences": {
+    "personalizeTitle": "Personalize Your News Feed",
+    "selectCategories": "Select Categories",
+    "selectSources": "Select Sources",
+    "selectAuthors": "Select Authors",
+    "selectCategoriesPlaceholder": "Select Categories",
+    "selectSourcesPlaceholder": "Select Sources",
+    "selectAuthorsPlaceholder": "Select Authors",
+    "saving": "Saving...",
+    "savePreferences": "Save Preferences"
   }
+
+
+
 }

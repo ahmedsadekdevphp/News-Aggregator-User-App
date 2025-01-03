@@ -8,10 +8,10 @@ const LoginForm = ({ onSubmit, register, handleSubmit, errors, generalError }) =
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-12 col-md-6">
-                    <Card className="card shadow-sm login p-4">
+                    <Card className="card  shadow-sm login p-4">
                         <h3 className="text-center mb-6">{t('login.title')}</h3>
                         <Form onSubmit={handleSubmit(onSubmit)} className="form">
-                            {generalError && <Alert variant="danger">{t('login.generalError')}</Alert>}
+                            {generalError && <Alert variant="danger">{generalError}</Alert>}
                             <Form.Group controlId="formEmail" className="mb-3">
                                 <Form.Control
                                     {...register('email', { required: t('login.emailRequired') })}

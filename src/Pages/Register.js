@@ -1,46 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import RegisterForm from '../Components/RegisterForm'; 
+import RegisterForm from '../Components/RegisterForm';
+import RegisterUser from '../Services/RegisterService';
+import config from '../config';
 
 const Register = () => {
-  const { register, handleSubmit, setError, getValues } = useForm();
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    getValues,
+    setError,
+    reset
+  } = useForm();
+  const [generalError, setGeneralError] = useState('');
   const onSubmit = async (data) => {
+    setGeneralError('');
+    setLoading(true);
     try {
-      const response = await axios.post('config.BAC_URL + config.ENDPOINTS.REGISTER', {
-        name: data.name,
-        email: data.email,
-        password: data.password,
-        password_confirmation: data.passwordConfirmation,
-      });
-      console.log(response.data);
-      navigate('/login'); 
+      const response = await RegisterUser(data);
+      setSuccessMessage(response.message);
+      setLoading(false);
+      reset();
     } catch (error) {
-      if (error.response) {
-        const { data } = error.response;
-        if (data.errors) {
-          for (const [key, value] of Object.entries(data.errors)) {
-            setError(key, { type: 'manual', message: value[0] });
-          }
-        }
+      if (error.response && error.response.status === config.STATUSCODES.UNPROCESSABLE_CONTENT) {
+        const { errors: validationErrors } = error.response.data;
+        Object.keys(validationErrors).forEach((field) => {
+          setError(field, {
+            type: 'server',
+            message: validationErrors[field][0],
+          });
+        });
+
       } else {
-        console.error('Registration failed', error);
+        setGeneralError(error.response.data.message);
       }
+      setLoading(false);
     }
   };
 
   return (
-    <div>
-      <RegisterForm
-        onSubmit={onSubmit}
-        register={register}
-        handleSubmit={handleSubmit}
-        getValues={getValues} 
-      />
-    </div>
+    <RegisterForm
+      onSubmit={handleSubmit(onSubmit)}
+      register={register}
+      errors={errors}
+      loading={loading}
+      getValues={getValues}
+      generalError={generalError}
+      successMessage={successMessage}
+      reset={reset}
+    />
   );
 };
+
 export default Register;
