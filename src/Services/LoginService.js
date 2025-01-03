@@ -3,12 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import config from '../config';
 import { useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux'; 
 import { login } from '../Store/authSlice'; 
 
 const LoginService = () => {
-    const { t } = useTranslation();
     const { register, handleSubmit, setError, formState: { errors } } = useForm();
     const [generalError, setGeneralError] = useState('');
     const navigate = useNavigate();

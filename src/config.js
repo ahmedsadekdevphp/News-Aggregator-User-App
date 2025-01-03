@@ -1,5 +1,5 @@
 const config = {
-  BAC_URL: 'http://127.0.0.1:8000/api/',
+  BAC_URL: 'https://backend.sadekdev.tech/api/',
   ENDPOINTS: {
     LOGIN: 'login',
     REGISTER: 'register',
