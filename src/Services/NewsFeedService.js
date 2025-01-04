@@ -8,7 +8,7 @@ const NewsFeedService  = (currentPage) => {
     const [error, setError] = useState('');
     const [totalPages, setTotalPages] = useState(1);
 
-    const fetchPosts = async (currentPage) => {
+    const fetchPosts = async () => {
         try {
             setLoading(true);
             const authToken = localStorage.getItem('authToken');

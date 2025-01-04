@@ -7,13 +7,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
 import i18n from './i18n';
 import { Provider } from 'react-redux';
-import store from './Store/store';
+import store, { persistor } from './Store/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
+  <PersistGate loading={null} persistor={persistor}>
     <App />
-  </Provider>,
+  </PersistGate>
+</Provider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
